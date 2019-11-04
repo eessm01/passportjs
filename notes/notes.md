@@ -120,18 +120,18 @@ En la columna de izquierda puedes ver como es un JWT mientras que en la columna 
 
 Un JWT consta de 3 partes: **Header, Payload y Signature**, generalmente divididas por un punto.
 
-- **Header**: tiene 2 atributos, el tipo que en esté caso siempre debería ser JWT y el algoritmo de encriptación de la firma, el algoritmo de encriptación de la firma **puede ser sincrono o asincrono**. Recordemos que los algoritmos asincronos **usan 2 llaves** de encriptación; una llave **privada** y una llave **pública**, donde la llave pública se usa para encriptar y la llave privada se usa para desencriptar y el los algoritmos de encriptación sincronos se usa la misma llave para desencriptar e incriptar, ambos son seguros de usar pero depende donde los uses.
+- **Header**: tiene 2 atributos, el tipo (typ) que en este caso siempre debería ser JWT y el algoritmo (alg) de encriptación de la firma, el algoritmo de encriptación de la firma **puede ser síncrono o asíncrono**. Recordemos que los algoritmos asíncronos **usan 2 llaves** de encriptación; una llave **privada** y una llave **pública**, donde la llave pública se usa para encriptar y la llave privada se usa para desencriptar y el los algoritmos de encriptación síncronos se usa la misma llave para desencriptar e incriptar, ambos son seguros de usar pero depende donde los uses.
 
-Los algoritmos asincronos deben usarse donde hay partes públicas que puedan tener acceso a está llave, mientras que los algoritmos sincronos solo deben usarse en sistemas como el [backend](https://platzi.com/blog/que-es-frontend-y-backend/).
+Los algoritmos asíncronos deben usarse donde hay partes públicas que puedan tener acceso a está llave, mientras que los algoritmos síncronos solo deben usarse en sistemas como el [backend](https://platzi.com/blog/que-es-frontend-y-backend/).
 
-- **Payload**: Es donde guardamos toda la información de nuestro usuario, incluso todos los scopes de autorización, esté payload se compone de algó llamado los **claims**, los claims son generalmente representados por 3 letras para mantener el JWT muy pequeño, hay diferentes tipos de claims.
+- **Payload**: Es donde guardamos toda la información de nuestro usuario, incluso todos los scopes de autorización, este payload se compone de algo llamado los **claims**, los claims son generalmente representados por 3 letras para mantener el JWT muy pequeño, hay diferentes tipos de claims.
 
-Nosotros en la página donde está el estandar podemos ver en la sección 4.1 lo que se llama los ``Registered Claim Names``. Estos son ``clains`` especificos que tienen una definición propia y debe respetarse.
+Nosotros en la página donde está el estandar podemos ver en la sección 4.1 lo que se llama los ``Registered Claim Names``. Estos son ``claims`` especificos que tienen una definición propia y debe respetarse.
 
-También podemos usar los ``Public Claim Names``, estos pueden usarse entre diferentes aplicaciones y ya estan también definidos, mientras que los **Private Claim Names**, son los que tu defines para tu aplicación.
+También podemos usar los ``Public Claim Names``, estos pueden usarse entre diferentes aplicaciones y están también definidos, mientras que los **Private Claim Names**, son los que tu defines para tu aplicación.
 
 
-- **Signature**: La tercera parte del JWT que es la firma y es lo que hace muy poderoso el JWT está compuesto por el **header códificado** más el **payload códificado**, ha esto se le aplica el algoritmo de encriptación por su puesto usando un ``secret``. En el caso del algoritmo H256 debemos usar un string de 256 bits de longitud.
+- **Signature**: La tercera parte del JWT que es la firma y es lo que hace muy poderoso el JWT está compuesto por el **header codificado** más el **payload codificado**, a esto se le aplica el algoritmo de encriptación, por supuesto, usando un ``secret``. En el caso del algoritmo H256 debemos usar un string de 256 bits de longitud.
 
 <div align="right">
   <small><a href="#tabla-de-contenido">🡡 volver al inicio</a></small>
